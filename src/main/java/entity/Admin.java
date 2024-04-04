@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "admin", schema = "ezban")
@@ -24,6 +25,18 @@ public class Admin {
 
     @Column(name = "admin_status")
     private Byte adminStatus;
+
+    public Admin() {
+    }
+
+    public Admin(Integer adminno, String adminAccount, String adminPwd, String adminMail, String adminPhone, Byte adminStatus) {
+        this.adminno = adminno;
+        this.adminAccount = adminAccount;
+        this.adminPwd = adminPwd;
+        this.adminMail = adminMail;
+        this.adminPhone = adminPhone;
+        this.adminStatus = adminStatus;
+    }
 
     public Integer getAdminno() {
         return adminno;
@@ -73,4 +86,29 @@ public class Admin {
         this.adminStatus = adminStatus;
     }
 
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "adminno=" + adminno +
+                ", adminAccount='" + adminAccount + '\'' +
+                ", adminPwd='" + adminPwd + '\'' +
+                ", adminMail='" + adminMail + '\'' +
+                ", adminPhone='" + adminPhone + '\'' +
+                ", adminStatus=" + adminStatus +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Admin admin = (Admin) o;
+        return Objects.equals(adminno, admin.adminno);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(adminno);
+    }
 }
