@@ -9,7 +9,7 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_no", nullable = false)
-    private Integer adminno;
+    private Integer adminNo;
 
     @Column(name = "admin_account", length = 20)
     private String adminAccount;
@@ -29,8 +29,8 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(Integer adminno, String adminAccount, String adminPwd, String adminMail, String adminPhone, Byte adminStatus) {
-        this.adminno = adminno;
+    public Admin(Integer adminNo, String adminAccount, String adminPwd, String adminMail, String adminPhone, Byte adminStatus) {
+        this.adminNo = adminNo;
         this.adminAccount = adminAccount;
         this.adminPwd = adminPwd;
         this.adminMail = adminMail;
@@ -38,12 +38,12 @@ public class Admin {
         this.adminStatus = adminStatus;
     }
 
-    public Integer getAdminno() {
-        return adminno;
+    public Integer getAdminNo() {
+        return adminNo;
     }
 
-    public void setAdminno(Integer adminno) {
-        this.adminno = adminno;
+    public void setAdminNo(Integer adminNo) {
+        this.adminNo = adminNo;
     }
 
     public String getAdminAccount() {
@@ -90,7 +90,7 @@ public class Admin {
     @Override
     public String toString() {
         return "Admin{" +
-                "adminno=" + adminno +
+                "adminno=" + adminNo +
                 ", adminAccount='" + adminAccount + '\'' +
                 ", adminPwd='" + adminPwd + '\'' +
                 ", adminMail='" + adminMail + '\'' +
@@ -104,11 +104,11 @@ public class Admin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Admin admin = (Admin) o;
-        return Objects.equals(adminno, admin.adminno);
+        return Objects.equals(adminNo, admin.adminNo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adminno);
+        return Objects.hash(adminNo);
     }
 }

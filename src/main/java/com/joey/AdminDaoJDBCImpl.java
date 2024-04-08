@@ -54,7 +54,7 @@ public class AdminDaoJDBCImpl implements AdminDao {
             ps.setString(3, admin.getAdminMail());
             ps.setString(4, admin.getAdminPhone());
             ps.setByte(5, admin.getAdminStatus());
-            ps.setInt(6, admin.getAdminno());
+            ps.setInt(6, admin.getAdminNo());
 
             return ps.executeUpdate();
 
@@ -96,7 +96,7 @@ public class AdminDaoJDBCImpl implements AdminDao {
 
             while (rs.next()) {
                 admin = new Admin();
-                admin.setAdminno(rs.getInt("admin_no"));
+                admin.setAdminNo(rs.getInt("admin_no"));
                 admin.setAdminAccount(rs.getString("admin_account"));
                 admin.setAdminPwd(rs.getString("admin_pwd"));
                 admin.setAdminMail(rs.getString("admin_mail"));
@@ -127,7 +127,7 @@ public class AdminDaoJDBCImpl implements AdminDao {
 
             while (rs.next()) {
                 admin = new Admin();
-                admin.setAdminno(rs.getInt("admin_no"));
+                admin.setAdminNo(rs.getInt("admin_no"));
                 admin.setAdminAccount(rs.getString("admin_account"));
                 admin.setAdminPwd(rs.getString("admin_pwd"));
                 admin.setAdminMail(rs.getString("admin_mail"));

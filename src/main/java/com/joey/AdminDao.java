@@ -10,11 +10,7 @@ import java.util.List;
 
 public interface AdminDao {
 
-    /**
-     *
-     * @param admin Admin物件
-     * @return 回傳新增成功的筆數，-1表示新增失敗
-     */
+
     int insert(Admin admin);
     int update(Admin admin);
     int delete(Integer adminno);
